@@ -1,0 +1,56 @@
+If you're building your **Cyber Code Academy** website using **plain HTML, CSS, and JavaScript**, here's a well-structured file hierarchy:  
+
+```
+CyberCodeAcademy/
+│── index.html           # Main homepage
+│── about.html           # About page
+│── courses.html         # Courses page
+│── contact.html         # Contact page
+│── blog.html            # Blog (if needed)
+│── signup.html          # Signup/Login page
+│
+├── assets/              # All static assets
+│   ├── css/             # Stylesheets
+│   │   ├── style.css    # Global styles
+│   │   ├── responsive.css # Media queries for responsiveness
+│   │   └── animations.css # Animations (if any)
+│   ├── js/              # JavaScript files
+│   │   ├── script.js    # Main JavaScript file
+│   │   ├── form.js      # Form validation scripts
+│   │   ├── slider.js    # Image slider or carousel script
+│   ├── images/          # Images for the website
+│   │   ├── logo.png     # Academy logo
+│   │   ├── banner.jpg   # Homepage banner
+│   │   ├── course1.jpg  # Course-related images
+│   ├── fonts/           # Custom fonts (if any)
+│   ├── icons/           # Icons (if using custom icons)
+│
+├── includes/            # Reusable components (optional for modularity)
+│   ├── header.html      # Website header
+│   ├── footer.html      # Footer section
+│   ├── navbar.html      # Navigation menu
+│
+├── docs/                # Documentation (if needed)
+│   ├── README.md        # Project overview
+│   ├── style-guide.md   # CSS and UI guidelines
+│
+├── .gitignore           # Git ignore file (if using Git)
+└── README.md            # Project overview and setup instructions
+```
+
+### Breakdown of Key Files:
+- **`index.html`** → Homepage with an introduction, course highlights, and testimonials.  
+- **`about.html`** → Information about Cyber Code Academy.  
+- **`courses.html`** → List of available IT courses.  
+- **`contact.html`** → Contact form with email & phone details.  
+- **`signup.html`** → User registration and login form.  
+- **`assets/css/style.css`** → Main stylesheet.  
+- **`assets/js/script.js`** → JavaScript for interactivity.  
+- **`includes/`** → Contains reusable components like the header, footer, and navbar (optional).  
+
+### Additional Features:
+✅ **Mobile-friendly (responsive.css for better design on all devices)**  
+✅ **JavaScript for form validation, sliders, and other interactive elements**  
+✅ **SEO-friendly (meta tags, robots.txt, sitemap.xml can be added)**  
+
+Would you like me to generate a basic **HTML template** for your coaching website? 🚀
