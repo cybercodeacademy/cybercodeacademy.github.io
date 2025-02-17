@@ -35,4 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// JavaScript code to pause the slider on hover
+const slider = document.querySelector('.alumni-slider');
 
+slider.addEventListener('mouseover', () => {
+  slider.style.animationPlayState = 'paused';
+});
+
+slider.addEventListener('mouseout', () => {
+  slider.style.animationPlayState = 'running';
+});
