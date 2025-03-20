@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Data via WhatsApp</title>
+</head>
+<body>
+
+    <h2>Contact Form</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required><br><br>
+
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <button type="button" onclick="sendWhatsApp()">Submit</button>
+    </form>
+
+    <script>
+        function sendWhatsApp() {
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
+            
+            if(name && mobile && email) {
+                let message = `Name: ${name}%0A📞 Mobile: ${mobile}%0A✉️ Gmail: ${email}`;
+                let phoneNumber = "7489224798";  // Receiver's WhatsApp number
+                let whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                
+                window.open(whatsappURL, '_blank');
+            } else {
+                alert("Please fill all fields!");
+            }
+        }
+    </script>
+
+</body>
+</html>
