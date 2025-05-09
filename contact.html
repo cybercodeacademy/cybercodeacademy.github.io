@@ -27,18 +27,67 @@
     </nav>
 </header>
     
-   <!-- Contact Section -->
+ <!-- Cyber Code Academy - Student Registration Form -->
 <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>If you have any questions, feel free to reach out to us.</p>
+  <h2>Cyber Code Academy - Student Registration Form</h2>
+  <p>Please fill out this form to register for your desired IT course at Cyber Code Academy.</p>
 
-    <br>
-    
-    <!-- Embedded Google Form -->
-    <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe2zAB49ckRTw2ZhkhDFOi9PE3k1gh24hvsQxRl1VW05NEBBQ/viewform?embedded=true" width="100%" height="1520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
+  <form id="registrationForm">
+      <label for="fullName">Full Name *</label><br>
+      <input type="text" id="fullName" name="fullName" required><br><br>
+
+      <label for="email">Email Address *</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="phone">Phone Number *</label><br>
+      <input type="tel" id="phone" name="phone" required><br><br>
+
+      <label for="age">Age</label><br>
+      <input type="number" id="age" name="age"><br><br>
+
+      <label for="qualification">Educational Qualification</label><br>
+      <input type="text" id="qualification" name="qualification"><br><br>
+
+      <label for="course">Preferred Course</label><br>
+      <select id="course" name="course">
+          <option value="Python Programming">Python Programming</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Ethical Hacking">Ethical Hacking</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+          <option value="CCNA">CCNA</option>
+          <option value="CCNP">CCNP</option>
+          <option value="Redhat Linux">Redhat Linux</option>
+          <option value="Other">Other</option>
+      </select><br><br>
+
+      <button type="submit">Submit & Send to WhatsApp</button>
+  </form>
 </section>
+
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const name = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const age = document.getElementById('age').value;
+      const qualification = document.getElementById('qualification').value;
+      const course = document.getElementById('course').value;
+
+      // Create WhatsApp message
+      const message = `New Student Registration:\n\nFull Name: ${name}\nEmail Address: ${email}\nPhone Number: ${phone}\nAge: ${age}\nEducational Qualification: ${qualification}\nPreferred Course: ${course}`;
+
+      // WhatsApp link (use country code +91 for India)
+      const whatsappURL = `https://wa.me/917489224798?text=${encodeURIComponent(message)}`;
+
+      // Redirect to WhatsApp
+      window.open(whatsappURL, '_blank');
+  });
+</script>
+
 
 
    <!-- Google Map Section -->
