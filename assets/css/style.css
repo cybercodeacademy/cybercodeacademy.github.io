@@ -1,73 +1,370 @@
-/* Reset & Global */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; }
-h2 { font-size: 36px; font-weight: bold; margin-bottom: 10px; }
-p { font-size: 18px; margin-bottom: 20px; }
-
-/* Responsive Typography */
-@media (max-width:768px) { h2 { font-size: 28px; } p { font-size: 16px; } }
-@media (max-width:480px) { h2 { font-size: 24px; } p { font-size: 14px; } }
-
-/* Navbar */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 5px; background:#4C585B; color:#fff; }
-.logo img { height: 50px; object-fit: contain; }
-.nav-links { display:flex; list-style:none; }
-.nav-links li { margin:0 15px; }
-.nav-links a { color:#fff; text-decoration:none; }
-.contact-info { color:#24b217; text-align:center; font-size:14px; }
-.menu-toggle { display:none; cursor:pointer; font-size:24px; }
-@media (max-width:768px) {
-  .navbar { flex-direction:column; }
-  .nav-links { display:none; flex-direction:column; width:100%; text-align:center; background:#333; position:absolute; top:60px; left:0; }
-  .nav-links.active { display:flex; }
-  .menu-toggle { display:block; }
+/* =========================
+   Global Styles & Variables
+========================= */
+:root {
+  --primary: #007bff;
+  --secondary: #6610f2;
+  --light-bg: #f4f4f4;
+  --dark-bg: #4C585B;
+  --accent: #00eaff;
+  --footer-bg: #F4EDD3;
+  --footer-dark: #444;
 }
 
-/* Hero */
-.hero { text-align:center; padding:50px; background:#007bff; color:#fff; }
-.btn { background:#fff; color:#007bff; padding:10px 20px; border-radius:5px; text-decoration:none; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* About */
-.about { padding:50px 20px; background:#f4f4f4; display:flex; flex-wrap:wrap; align-items:center; }
-.about-text, .about-image { flex:1; padding:20px; }
-.about-image img { max-width:100%; border-radius:10px; }
-@media (max-width:768px){ .about { flex-direction:column; text-align:center; } }
+body {
+  font-family: Arial, sans-serif;
+}
 
-/* Courses */
-.courses { padding:50px 20px; background:#f4f4f4; text-align:center; }
-.course-cards { display:flex; flex-wrap:wrap; justify-content:center; }
-.course-card { flex:1 1 250px; margin:15px; padding:20px; border:1px solid #ddd; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-.course-card img { width:100%; height:150px; object-fit:cover; border-radius:10px 10px 0 0; }
-.course-card h3 { margin:10px 0; font-size:18px; }
-.course-card p { font-size:14px; }
-.course-card .btn { color:#3498db; font-weight:bold; }
-.course-card .btn:hover { text-decoration:underline; }
+/* Typography */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-/* Map */
-.map-section { padding:40px 20px; text-align:center; background:#f4f4f4; }
-.map-container { max-width:800px; margin:auto; }
-.map-container iframe { width:100%; height:450px; border:0; border-radius:8px; }
-@media (max-width:768px){ .map-container iframe { height:350px; } }
-@media (max-width:480px){ .map-container iframe { height:300px; } }
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
-/* Alumni */
-.alumni { padding:50px; background:#f4f4f4; }
-.alumni-slider { display:flex; overflow-x:auto; gap:20px; scroll-behavior:smooth; scrollbar-width:none; }
-.alumni-slider::-webkit-scrollbar{ display:none; }
-.alumni-slide { flex:0 0 auto; width:250px; text-align:center; transition:.3s; }
-.alumni-slide:hover { transform:scale(1.05); }
-.alumni-member img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; }
-.alumni-member h3 { font-size:18px; margin-bottom:5px; }
-.alumni-member p { font-size:14px; }
+/* =========================
+   Navbar
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: var(--dark-bg);
+  color: #fff;
+}
 
-/* Footer */
-.footer { background:#F4EDD3; padding:20px; text-align:center; }
-.footer-content { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px; }
-.footer-links { list-style:none; display:flex; gap:20px; }
-.footer-links a { color:#fff; text-decoration:none; }
-.footer-bottom { background:#444; padding:10px; color:#fff; }
-@media (max-width:768px){ .footer-content { flex-direction:column; } .footer-links { flex-direction:column; } }
+.logo img {
+  height: 50px;
+  object-fit: contain;
+}
 
-/* Banner (desktop only) */
-.banner { display:none; }
-@media (min-width:1024px){ .banner { display:block; } .banner img { width:100%; height:100vh; object-fit:cover; } }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info {
+  color: rgb(36, 178, 23);
+  font-size: 14px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  text-align: center;
+  padding: 50px;
+  background: var(--primary);
+  color: white;
+}
+
+.btn {
+  background: white;
+  color: var(--primary);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* =========================
+   About Section
+========================= */
+.about {
+  padding: 50px 20px;
+  background: var(--light-bg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-text,
+.about-image {
+  flex: 1 1 45%;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* =========================
+   Courses Section
+========================= */
+.courses {
+  padding: 50px 20px;
+  background: var(--light-bg);
+  text-align: center;
+}
+
+.course-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.course-card {
+  flex: 1 1 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.course-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.course-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.course-card .btn {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.course-card .btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Alumni Section
+========================= */
+.alumni {
+  padding: 50px;
+  background: var(--light-bg);
+}
+
+.alumni-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scrollbar-width: none;
+}
+
+.alumni-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.alumni-slide {
+  flex: 0 0 auto;
+  width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.alumni-slide:hover {
+  transform: scale(1.05);
+}
+
+.alumni-member {
+  text-align: center;
+}
+
+.alumni-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   Contact Section
+========================= */
+.contact {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact h2 {
+  font-size: 32px;
+  animation: slideDown 1s ease-in-out;
+}
+
+.contact p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1s ease-in-out;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--accent);
+  transform: scale(1.02);
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #00c4cc;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 228, 255, 0.4);
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  background: var(--footer-bg);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  background: var(--footer-dark);
+  padding: 10px;
+  color: #fff;
+}
+
+/* =========================
+   Map Section
+========================= */
+.map-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--light-bg);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px) {
+  h2 { font-size: 28px; }
+  p { font-size: 16px; }
+  .course-card { flex: 1 1 45%; }
+}
+
+@media (max-width: 768px) {
+  h2 { font-size: 24px; }
+  p { font-size: 14px; }
+  .navbar { flex-direction: column; }
+  .nav-links { display: none; flex-direction: column; width: 100%; }
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: block; }
+  .about, .footer-content { flex-direction: column; }
+  .alumni-slide { width: 200px; }
+  .map-container iframe { height: 350px; }
+}
+
+@media (max-width: 480px) {
+  .course-card { flex: 1 1 100%; }
+  .alumni-slide { width: 150px; }
+  .map-container iframe { height: 300px; }
+  .form-container { padding: 20px; }
+}
