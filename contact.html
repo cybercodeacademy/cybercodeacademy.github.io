@@ -17,52 +17,56 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="courses.html">Courses</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
             <li><a href="faq.html">Question</a></li>
         </ul>
         <div class="contact-info">
-            <p><b>📞 +91 9202898043  </b></p> <p> <b> cybercodeacademy1@gmail.com</b></p>
+            <p><b>📞 +91 9202898043</b></p>
+            <p><b>cybercodeacademy1@gmail.com</b></p>
         </div>
         <div class="menu-toggle">&#9776;</div>
     </nav>
-</header>
+  </header>
     
  <!-- Cyber Code Academy - Student Registration Form -->
 <section class="contact" id="contact">
   <h2>Cyber Code Academy - Student Registration Form</h2>
   <p>Please fill out this form to register for your desired IT course at Cyber Code Academy.</p>
 
-  <form id="registrationForm">
-      <label for="fullName">Full Name *</label><br>
-      <input type="text" id="fullName" name="fullName" required><br><br>
+  <div class="form-container">
+    <form id="registrationForm">
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
 
-      <label for="email">Email Address *</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-      <label for="phone">Phone Number *</label><br>
-      <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-      <label for="age">Age</label><br>
-      <input type="number" id="age" name="age"><br><br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age">
 
-      <label for="qualification">Educational Qualification</label><br>
-      <input type="text" id="qualification" name="qualification"><br><br>
+        <label for="qualification">Educational Qualification</label>
+        <input type="text" id="qualification" name="qualification" placeholder="Enter your qualification">
 
-      <label for="course">Preferred Course</label><br>
-      <select id="course" name="course">
-          <option value="Python Programming">Python Programming</option>
-          <option value="Web Development">Web Development</option>
-          <option value="Ethical Hacking">Ethical Hacking</option>
-          <option value="Data Science">Data Science</option>
-          <option value="Cloud Computing">Cloud Computing</option>
-          <option value="CCNA">CCNA</option>
-          <option value="CCNP">CCNP</option>
-          <option value="Redhat Linux">Redhat Linux</option>
-          <option value="Other">Other</option>
-      </select><br><br>
+        <label for="course">Preferred Course *</label>
+        <select id="course" name="course" required>
+            <option value="">-- Select a Course --</option>
+            <option value="Python Programming">Python Programming</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Ethical Hacking">Ethical Hacking</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="CCNA">CCNA</option>
+            <option value="CCNP">CCNP</option>
+            <option value="Redhat Linux">Redhat Linux</option>
+            <option value="Other">Other</option>
+        </select>
 
-      <button type="submit">Submit & Send to WhatsApp</button>
-  </form>
+        <button type="submit">Submit & Send to WhatsApp</button>
+    </form>
+  </div>
 </section>
 
 <script>
@@ -87,8 +91,6 @@
       window.open(whatsappURL, '_blank');
   });
 </script>
-
-
 
    <!-- Google Map Section -->
    <section class="map-section">
